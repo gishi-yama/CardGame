@@ -8,7 +8,7 @@ import java.util.Objects;
  * プレイヤーが持っているカードをフィールドで表す。
  * インスタンス化されてからフィールドが変化しない（イミュータブル）。
  */
-public class Player {
+public final class Player {
 
   private final Card card;
 

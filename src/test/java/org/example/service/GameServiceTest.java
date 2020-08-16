@@ -10,14 +10,16 @@ public class GameServiceTest {
 
   @Test
   public void カードの山に全種類のカードが入っている() {
-    var sut = new GameService();
-    var actual = sut.マークの種類からカードの山を作る();
-    assertAll(() -> assertEquals(5, actual.getMaisu()),
-      () -> assertTrue(actual.getCards().contains(new Card(Mark.CLOVER))),
-      () -> assertTrue(actual.getCards().contains(new Card(Mark.HART))),
-      () -> assertTrue(actual.getCards().contains(new Card(Mark.DIA))),
-      () -> assertTrue(actual.getCards().contains(new Card(Mark.SPADE))),
-      () -> assertTrue(actual.getCards().contains(new Card(Mark.JOKER)))
+    var service = new GameService();
+    var sut = service.マークの種類からカードの山を作る();
+    var actualSize = sut.getMaisu();
+    var actualCards = sut.copyCards();
+    assertAll(() -> assertEquals(5, actualSize),
+      () -> assertTrue(actualCards.contains(new Card(Mark.CLOVER))),
+      () -> assertTrue(actualCards.contains(new Card(Mark.HART))),
+      () -> assertTrue(actualCards.contains(new Card(Mark.DIA))),
+      () -> assertTrue(actualCards.contains(new Card(Mark.SPADE))),
+      () -> assertTrue(actualCards.contains(new Card(Mark.JOKER)))
     );
   }
 

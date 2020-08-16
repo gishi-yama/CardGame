@@ -1,5 +1,6 @@
 package org.example.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -9,7 +10,7 @@ import java.util.Objects;
  * 山として積み重ねられたカードの束をフィールドに設定している。
  * インスタンス化されてから、山からカードを引くと残りカードが変わる（ミュータブル）ので注意。
  */
-public class Yama {
+public final class Yama {
 
   private final List<Card> cards;
 
@@ -20,9 +21,9 @@ public class Yama {
   public int getMaisu() {
     return cards.size();
   }
-
-  public List<Card> getCards() {
-    return cards;
+  
+  public List<Card> copyCards() {
+    return new ArrayList<>(cards);
   }
 
   // カードの山からn枚目を引き、引いたカードを減らす
