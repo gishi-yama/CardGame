@@ -1,0 +1,1 @@
+= Github で AsciiDoc の Readme は作れるの？
