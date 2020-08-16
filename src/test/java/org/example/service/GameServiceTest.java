@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class GameServiceTest {
 
   @Test
-  public void マークの種類からカードの山を作る() {
+  public void カードの山に全種類のカードが入っている() {
     var sut = new GameService();
     var actual = sut.マークの種類からカードの山を作る();
     assertAll(() -> assertEquals(5, actual.getMaisu()),

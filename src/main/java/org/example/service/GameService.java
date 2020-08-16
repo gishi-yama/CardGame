@@ -11,10 +11,14 @@ import java.util.stream.Collectors;
 
 public class GameService {
 
+  private Yama yama;
+  private Player you;
+  private Player cpu;
+
   public void run() {
-    var yama = マークの種類からカードの山を作る();
-    var you = あなたがカードをひく(yama);
-    var cpu = CPUがカードをひく(yama);
+    yama = マークの種類からカードの山を作る();
+    you = あなたがカードをひく(yama);
+    cpu = CPUがカードをひく(yama);
     カードの数字が大きい方を勝利にする(you, cpu);
   }
 
