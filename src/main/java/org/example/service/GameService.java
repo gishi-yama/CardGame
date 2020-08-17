@@ -1,15 +1,11 @@
 package org.example.service;
 
-import org.example.model.Card;
-import org.example.model.Mark;
 import org.example.model.Player;
 import org.example.model.Yama;
 import org.example.rule.DrawRule;
 import org.example.rule.WinLoseRule;
 
-import java.util.EnumSet;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 /**
  * ゲームの進行を表現するクラス。
@@ -19,38 +15,27 @@ import java.util.stream.Collectors;
 public class GameService {
 
   public void run() {
-    Yama yama = マークの種類からカードの山を作る();
-    Player player1 = プレイヤー1が山からカードをひく(yama);
-    Player player2 = プレイヤー2が山からカードをひく(yama);
-    カードの数字が大きい方を勝利にする(player1, player2);
+    // カードの山を作る
+    Yama yama = new Yama();
+    // プレイヤー1が山からカードをひく
+    Player player1 = drawCardByPlayer1(yama);
+    // プレイヤー2が山からカードをひく
+    Player player2 = drawCardByPlayer2(yama);
+    // 勝者を判定する
+    seeWhoWins(player1, player2);
   }
 
-  Yama マークの種類からカードの山を作る() {
-    var marks = EnumSet.allOf(Mark.class);
-//
-////    List<Card> cards = new ArrayList<>();
-////    for(Mark mark : marks) {
-////      Card card = new Card(mark);
-////      cards.add(card);
-////    }
-//
-    var cards = marks.stream()
-      .map(Card::new)
-      .collect(Collectors.toList());
-    return new Yama(cards);
-  }
-
-  Player プレイヤー1が山からカードをひく(Yama yama) {
+  Player drawCardByPlayer1(Yama yama) {
     System.out.println("Player1の操作です");
-    return カードをひく(yama);
+    return drawCard(yama);
   }
 
-  Player プレイヤー2が山からカードをひく(Yama yama) {
+  Player drawCardByPlayer2(Yama yama) {
     System.out.println("Player2の操作です");
-    return カードをひく(yama);
+    return drawCard(yama);
   }
 
-  Player カードをひく(Yama yama) {
+  Player drawCard(Yama yama) {
     System.out.println("何枚目のカードをひきますか？");
     while (true) {
       var scanner = new Scanner(System.in);
@@ -64,7 +49,7 @@ public class GameService {
     }
   }
 
-  void カードの数字が大きい方を勝利にする(Player p1, Player p2) {
+  void seeWhoWins(Player p1, Player p2) {
     var p1Mark = p1.getCardMark();
     var p2Mark = p2.getCardMark();
     System.out.println(String.format("Player1 : %s, Player2 : %s", p1Mark, p2Mark));

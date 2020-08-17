@@ -1,8 +1,10 @@
 package org.example.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.EnumSet;
 import java.util.List;
-import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * カードの山を表現するクラス。
@@ -14,14 +16,26 @@ public final class Yama {
 
   private final List<Card> cards;
 
-  public Yama(List<Card> cards) {
-    this.cards = Objects.requireNonNull(cards);
+  public Yama() {
+    var marks = EnumSet.allOf(Mark.class);
+    cards = marks.stream()
+      .map(Card::new)
+      .collect(Collectors.toList());
+
+//    上の marks.stream... はこのfor文と同じ処理
+//    List<Card> cards = new ArrayList<>();
+//    for(Mark mark : marks) {
+//      Card card = new Card(mark);
+//      cards.add(card);
+//    }
+
+    Collections.shuffle(cards);
   }
 
   public int getMaisu() {
     return cards.size();
   }
-  
+
   public List<Card> copyCards() {
     return new ArrayList<>(cards);
   }
