@@ -1,17 +1,14 @@
-package org.example.service;
+package org.example.model;
 
-import org.example.model.Card;
-import org.example.model.Mark;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class GameServiceTest {
+public class YamaTest {
 
   @Test
   public void カードの山に全種類のカードが入っている() {
-    var service = new GameService();
-    var sut = service.マークの種類からカードの山を作る();
+    var sut = new Yama();
     var actualSize = sut.getMaisu();
     var actualCards = sut.copyCards();
     assertAll(() -> assertEquals(5, actualSize),
