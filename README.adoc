@@ -27,3 +27,7 @@ Javaでプログラミングの基本文法や、`ArrayList` などの標準ラ�
 . 列挙型
 . クラスを横断する処理の切り分け
 . 色々なものをクラスで表す
+
+== お題
+
+image::./お題.jpg[scaledwidth="100%",align="center"]
