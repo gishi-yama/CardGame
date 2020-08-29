@@ -26,3 +26,9 @@ image::./お題.jpg[scaledwidth="100%",align="center"]
 == 解説資料
 
 * https://speakerdeck.com/gishi_yama/javado18-20200829[Java Doでしょう#18 〈オンライン〉Javaを始めた＆これから使う人向けモブプログラミング会]
+
+== 備考
+
+JavaDocはAsciiDoc構文を使っているので、IntelliJ IDEAに、 https://plugins.jetbrains.com/plugin/7391-asciidoc[AsciiDocプラグイン] を入れるとよい。
+
+プラグインのインストール後、設定項目の `Languages & Frameworks` > `AsciiDoc` で、 `Enabled Asciidoclet Support` をONにする。
