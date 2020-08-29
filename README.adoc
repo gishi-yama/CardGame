@@ -19,10 +19,10 @@ Javaでプログラミングの基本文法や、`ArrayList` などの標準ラ�
 本来、クラス作成（設計）のパターンには、各種のデザインパターンや、ドメイン駆動設計におけるドメインモデルパターンなど、実践的な体系が確立されています。 +
 このハンズオンはより初心者向けに、前述のパターンなどに手をかける前の手習いとして「積極的にクラスを作る」練習をする部分を狙っています。
 
-== 解説資料
-
-<script async class="speakerdeck-embed" data-id="ca0cbe41c3c7451998b79f8327c3480d" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
-
 == お題
 
 image::./お題.jpg[scaledwidth="100%",align="center"]
+
+== 解説資料
+
+* https://speakerdeck.com/gishi_yama/javado18-20200829[Java Doでしょう#18 〈オンライン〉Javaを始めた＆これから使う人向けモブプログラミング会]
