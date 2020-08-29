@@ -7,9 +7,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * カードの山を表現するクラス。
+ * == カードの山を表現するクラス。
  *
  * 山として積み重ねられたカードの束をフィールドに設定している。
+ *
  * インスタンス化されてから、山からカードを引くと残りカードが変わる（ミュータブル）ので注意。
  */
 public final class Yama {
