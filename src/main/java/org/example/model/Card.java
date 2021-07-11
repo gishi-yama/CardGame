@@ -3,7 +3,7 @@ package org.example.model;
 import java.util.Objects;
 
 /**
- * == カード1枚分を表現するクラス。
+ * == カード1枚分を表現するクラス
  *
  * カードに描かれているマークをフィールドで表す。
  *
