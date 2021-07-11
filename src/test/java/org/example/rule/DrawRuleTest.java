@@ -39,5 +39,5 @@ public class DrawRuleTest {
     var sut = new DrawRule(yama, "-1");
     assertFalse(sut.isOK());
   }
-
+  
 }
